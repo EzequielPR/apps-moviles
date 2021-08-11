@@ -1,0 +1,11 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_8" height="512" width="512" y="0" x="0" stroke-width="0" stroke="#058719" fill="#ffffff"/>
+  <rect stroke="#058719" stroke-width="10" rx="20" id="svg_1" height="68" width="408" y="206" x="50" fill="none"/>
+  <rect stroke-width="10" rx="20" stroke="#6c757d" id="svg_2" height="68" width="412" y="300" x="50" fill="none"/>
+  <rect stroke-width="10" rx="20" stroke="#dc3545" id="svg_3" height="68" width="412" y="394" x="50" fill="none"/>
+  <text stroke="#058719" font-style="normal" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="'Nunito SemiBold'" font-size="100" id="svg_5" y="160" x="109.79688" stroke-width="0" fill="#000000">Votar?</text>
+ </g>
+
+</svg>

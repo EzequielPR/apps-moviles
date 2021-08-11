@@ -1,0 +1,20 @@
+{
+    "name": "Votaciones",
+    "short_name": "Votaciones",
+    "icons": [
+        {
+            "src": "/images/icons/logo_512x512.svg",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/icons/logo_512x512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#FFFFFF"
+}
