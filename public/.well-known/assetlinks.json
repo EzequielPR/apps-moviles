@@ -1,10 +1,14 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
-      "package_name": "xyz.appmaker.gendih",
-      "sha256_cert_fingerprints": ["65:8E:42:30:07:85:C3:33:B2:E6:AB:DF:51:43:28:8D:75:A8:8A:FD:18:FB:84:9A:CC:FC:EF:4E:95:BF:6A:F9"]
+      "package_name": "ml.eprthings.votaciones",
+      "sha256_cert_fingerprints": [
+        "6D:37:16:3D:6F:A6:76:17:F8:11:E7:9D:6C:42:FC:A4:9E:88:0A:8A:84:57:FD:2F:08:33:F5:13:81:D9:F6:63"
+      ]
     }
   }
 ]
