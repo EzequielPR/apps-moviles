@@ -107,7 +107,7 @@
             </div>
             <h3 class="mt-2">{votacion.pregunta}</h3>
 
-            <div class="mt-3 d-grid gap-1 d-md-block">
+            <div class="mt-3 d-grid gap-1 d-md-block mb-2">
                 <button
                     class="btn btn-outline-success nohover"
                     class:active={votoActual === 'a_favor'}
