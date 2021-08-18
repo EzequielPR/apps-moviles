@@ -56,9 +56,11 @@
 				</li>
 			{/each}
 		</ul>
-		<br><br><hr><br>
+		<br><br>
 
 		{#if $usuario?.roles['admin']}
+			<hr><br>
+
 			<div class="d-flex justify-content-between align-items-center">
 				<h1>Votaciones detenidas: {votacionesDetenidas.length}</h1>
 				<button class="btn btn-danger"

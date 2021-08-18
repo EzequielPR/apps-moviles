@@ -176,20 +176,20 @@
                     <summary>Ver votantes</summary>
                     <div class="row">
                         {#await votantes then votantes}
-                            <div class="col-md-4">
-                                <strong>A favor</strong>
+                            <div class="col-md-4 mb-2">
+                                <strong>A favor ({votantes.a_favor.length} votos)</strong>
                                 {#each votantes.a_favor as votante}
                                     <p class="m-0">{votante}</p>
                                 {/each}
                             </div>
-                            <div class="col-md-4">
-                                <strong>Neutral</strong>
+                            <div class="col-md-4 mb-2">
+                                <strong>Neutral ({votantes.neutral.length} votos)</strong>
                                 {#each votantes.neutral as votante}
                                     <p class="m-0">{votante}</p>
                                 {/each}
                             </div>
-                            <div class="col-md-4">
-                                <strong>En contra</strong>
+                            <div class="col-md-4 mb-2">
+                                <strong>En contra ({votantes.en_contra.length} votos)</strong>
                                 {#each votantes.en_contra as votante}
                                     <p class="m-0">{votante}</p>
                                 {/each}

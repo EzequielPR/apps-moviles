@@ -30,14 +30,14 @@
                     <a class="nav-link" href="">Votaciones</a>
                 </li> -->
                 {#if $usuario}
-                    <li class="nav-item">
+                    <li class="nav-item cursor-pointer">
                         <div class="nav-link disabled">{$usuario.displayName}</div>
                     </li>
-                    <li class="nav-item ms-sm-auto">
+                    <li class="nav-item ms-sm-auto cursor-pointer">
                         <div class="nav-link" on:click={logout}>Cerrar sesión</div>
                     </li>
                 {:else}
-                    <li class="nav-item ms-sm-auto">
+                    <li class="nav-item ms-sm-auto cursor-pointer">
                         <div class="nav-link" on:click={googleLogin}>Acceder con Google</div>
                     </li>
                 {/if}
@@ -48,4 +48,8 @@
 
 
 
-<style></style>
+<style>
+    .cursor-pointer {
+        cursor: pointer;
+    }
+</style>
