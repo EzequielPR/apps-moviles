@@ -17,5 +17,6 @@ auth.onAuthStateChanged(async (newUser) => {
 });
 
 database.ref('votaciones').on('value', async (snapshot) => {
+    // console.log(snapshot.exists());
     votaciones.set(snapshot.val());
 });
