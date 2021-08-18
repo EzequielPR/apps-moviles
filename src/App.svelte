@@ -10,30 +10,76 @@
 	$: votacionesActivas = Object.entries($votaciones).filter(([id, v]) => v.activa);
 	$: votacionesDetenidas = Object.entries($votaciones).filter(([id, v]) => !v.activa);
 
+	$: console.log(votacionesActivas, votacionesDetenidas);
+
 	async function nuevaVotacion() {
 		Swal.fire({
-			title: 'Pregunta de la votación',
-			input: 'text',
-			inputAttributes: { autocapitalize: 'on' },
+			title: 'Nueva votación',
 			showCancelButton: true,
 			confirmButtonText: 'Agregar',
+			cancelButtonText: 'Cancelar',
+			html: `<div class="d-grid">
+				<input type="text" class="form-control mb-2" placeholder="pregunta" id="pregunta">
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" id="anonima">
+					<label class="form-check-label" for="flexCheckDefault">
+						Votantes anonimos?
+					</label>
+				</div>
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" id="activa">
+					<label class="form-check-label" for="flexCheckDefault">
+						Votación activa?
+					</label>
+				</div>
+				<div class="form-check mb-2">
+					<input class="form-check-input" type="checkbox" id="abierta">
+					<label class="form-check-label" for="flexCheckDefault">
+						Votación abierta?
+					</label>
+				</div>
+			</div>`,
 			showLoaderOnConfirm: true,
-			preConfirm: (pregunta) => {
-				database.ref(`votaciones/`).push({
+			preConfirm: async () => {
+				const pregunta = document.querySelector('input#pregunta').value;
+				const anonima = document.querySelector('input#anonima').checked;
+				const activa = document.querySelector('input#activa').checked;
+				const abierta = document.querySelector('input#abierta').checked;
+
+				database.ref(`votaciones`).push({
 					'pregunta': pregunta,
 					'a_favor': 0,
 					'neutral': 0,
 					'en_contra': 0,
-					'abierta': true,
-					'anonima': true,
-					'activa': false,
+					'abierta': abierta,
+					'anonima': anonima,
+					'activa': activa,
+					'votantes': {},
 				});
+
+				return pregunta;
 			},
 		}).then((result) => {
+			console.log(result);
 			if (result.isConfirmed) {
 				Swal.fire({ title: `Votación "${result.value}" agregada` })
 			}
 		});
+	}
+
+	async function borrarVotacionesDetenidas() {
+		Swal.fire({
+            title: `Estas seguro que deseas eliminar todas las votaciones detenidas?`,
+            showDenyButton: true,
+            confirmButtonText: `Si`,
+            denyButtonText: `No`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+				for (const [id, _] of votacionesDetenidas) {
+					database.ref(`votaciones/${id}`).remove();
+				}
+            }
+        });
 	}
 </script>
 
@@ -65,7 +111,7 @@
 				<h1>Votaciones detenidas: {votacionesDetenidas.length}</h1>
 				<button class="btn btn-danger"
 					hidden={!votacionesDetenidas.length}
-					on:click={nuevaVotacion}>
+					on:click={borrarVotacionesDetenidas}>
 					Borrar Todas
 				</button>
 			</div>
