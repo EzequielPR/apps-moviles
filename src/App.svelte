@@ -10,8 +10,6 @@
 	$: votacionesActivas = Object.entries($votaciones).filter(([id, v]) => v.activa);
 	$: votacionesDetenidas = Object.entries($votaciones).filter(([id, v]) => !v.activa);
 
-	$: console.log(votacionesActivas, votacionesDetenidas);
-
 	async function nuevaVotacion() {
 		Swal.fire({
 			title: 'Nueva votación',
@@ -60,7 +58,6 @@
 				return pregunta;
 			},
 		}).then((result) => {
-			console.log(result);
 			if (result.isConfirmed) {
 				Swal.fire({ title: `Votación "${result.value}" agregada` })
 			}
@@ -75,7 +72,10 @@
             denyButtonText: `No`,
         }).then((result) => {
             if (result.isConfirmed) {
-				for (const [id, _] of votacionesDetenidas) {
+				for (const [id, votacion] of votacionesDetenidas) {
+					for (const votanteId in votacion.votantes) {
+						database.ref(`usuarios/${votanteId}/votaciones/${id}`).remove();
+					}
 					database.ref(`votaciones/${id}`).remove();
 				}
             }

@@ -70,6 +70,9 @@
             denyButtonText: `No`,
         }).then((result) => {
             if (result.isConfirmed) {
+                for (const votanteId in votacion.votantes) {
+                    database.ref(`usuarios/${votanteId}/votaciones/${id}`).remove();
+                }
                 firebase.database().ref(`votaciones/${id}`).remove();
             }
         });
