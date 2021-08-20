@@ -1,14 +1,6 @@
-[
-      {
-            "relation": [
-                  "delegate_permission/common.handle_all_urls"
-            ],
-            "target": {
-                  "namespace": "android_app",
-                  "package_name": "ml.eprthings.votaciones",
-                  "sha256_cert_fingerprints": [
-                        "FD:5E:50:A0:89:EF:5C:90:DB:78:6B:D8:69:D9:F7:E0:AF:85:7C:FE:04:9A:62:43:7C:FE:BE:29:AB:33:30:B9"
-                  ]
-            }
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "ml.eprthings.votaciones",
+                     "sha256_cert_fingerprints": ["CA:B5:A0:21:08:3D:8B:22:1B:A2:61:EE:33:17:41:D5:B2:E0:CF:BB:22:DA:FE:42:C9:0D:80:BF:AD:F8:41:FA"] }
       }
 ]
