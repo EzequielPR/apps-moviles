@@ -20,18 +20,12 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/">
-            <!-- <img src="./images/icons/logo_512x512.png" height="30" width="30" alt="logo" class="d-inline-block align-text-top me-2"> -->
-            Votaciones
-        </a>
+        <a class="navbar-brand" href="/">Votaciones</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100">
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="">Votaciones</a>
-                </li> -->
                 {#if $usuario}
                     <li class="nav-item ms-sm-auto cursor-pointer">
                         <div class="nav-link text-info">{$usuario.displayName}</div>
