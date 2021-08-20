@@ -101,6 +101,10 @@
 				<li class="list-group-item">
 					<Votacion {id} {votacion} />
 				</li>
+			{:else}
+				<li class="list-group-item">
+					<h4 class="mt-2 text-center">No hay nada aqui ...</h4>
+				</li>
 			{/each}
 		</ul>
 		<br><br>
@@ -121,6 +125,10 @@
 				{#each [...votacionesDetenidas].reverse() as [id, votacion] (id)}
 					<li class="list-group-item">
 						<Votacion {id} {votacion} />
+					</li>
+				{:else}
+					<li class="list-group-item">
+						<h4 class="mt-2 text-center">No hay nada aqui ...</h4>
 					</li>
 				{/each}
 			</ul>
