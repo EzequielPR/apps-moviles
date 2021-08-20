@@ -1,5 +1,6 @@
 <script>
 	import Navbar from './components/Navbar.svelte';
+	import Footer from './components/Footer.svelte';
 	import Votacion from './components/Votacion.svelte';
 
 	import Swal from 'sweetalert2';
@@ -86,7 +87,7 @@
 
 
 <Navbar />
-<main class="container mt-5 mb-5">
+<main class="container flex-grow-1 mt-5 mb-5">
 	{#if $usuario}
 		<div class="d-flex justify-content-between align-items-center">
 			<h1 class="d-inline">Votaciones activas: {votacionesActivas.length}</h1>
@@ -130,6 +131,7 @@
 
 	{/if}
 </main>
+<Footer />
 
 
 

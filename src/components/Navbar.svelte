@@ -31,7 +31,7 @@
                 </li> -->
                 {#if $usuario}
                     <li class="nav-item cursor-pointer">
-                        <div class="nav-link disabled">{$usuario.displayName}</div>
+                        <div class="nav-link text-info">{$usuario.displayName}</div>
                     </li>
                     <li class="nav-item ms-sm-auto cursor-pointer">
                         <div class="nav-link" on:click={logout}>Cerrar sesión</div>
